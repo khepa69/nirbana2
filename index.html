@@ -6,7 +6,7 @@
     <title>Nirvana: The Cosmic Sanctuary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* === Universal Cosmic CSS === */
+        /* === Optimized Cosmic CSS === */
         :root {
             --stardust: #8e44ad;
             --nebula: #3498db;
@@ -34,9 +34,10 @@
             min-height: 100vh;
             position: relative;
             line-height: 1.6;
+            will-change: background;
         }
 
-        /* === Cosmic Particle Field === */
+        /* === Optimized Cosmic Background === */
         body::before {
             content: '';
             position: fixed;
@@ -46,8 +47,7 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 20% 30%, rgba(142, 68, 173, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(52, 152, 219, 0.1) 0%, transparent 20%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.5"/></svg>');
+                radial-gradient(circle at 80% 70%, rgba(52, 152, 219, 0.1) 0%, transparent 20%);
             opacity: 0.3;
             z-index: -2;
             pointer-events: none;
@@ -68,33 +68,33 @@
         }
 
         .title {
-            font-size: 6rem;
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 900;
             background: linear-gradient(45deg, var(--supernova), var(--nebula), var(--aurora), var(--quantum));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-            animation: cosmicFlow 12s ease infinite;
             margin-bottom: 20px;
             letter-spacing: 5px;
+            will-change: background-position;
+            animation: cosmicFlow 20s linear infinite;
         }
 
         .subtitle {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
             color: var(--aurora);
             margin-bottom: 40px;
             font-weight: 300;
             letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
         }
 
         .sacred-symbol {
-            font-size: 6rem;
+            font-size: clamp(4rem, 10vw, 6rem);
             margin: 40px 0;
             display: inline-block;
             animation: floatSymbol 8s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            will-change: transform;
         }
 
         /* === Cosmic Family Section === */
@@ -102,160 +102,124 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 50px;
-            margin: 80px 0;
+            gap: 30px;
+            margin: 60px 0;
         }
 
         .member {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 25px;
-            padding: 40px;
-            width: 320px;
+            padding: 30px;
+            width: min(100%, 320px);
             text-align: center;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.6s;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .member::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--color) 0%, transparent 70%);
-            opacity: 0.2;
-            z-index: -1;
-            animation: pulse 8s infinite;
         }
 
         .member:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            border-color: var(--color);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .member img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--color);
             margin-bottom: 25px;
-            box-shadow: 0 0 30px var(--color);
-            transition: all 0.5s;
+            transition: transform 0.4s ease;
+            will-change: transform;
         }
 
         .member:hover img {
-            transform: rotate(5deg) scale(1.05);
-            box-shadow: 0 0 50px var(--color);
+            transform: scale(1.05);
         }
 
         .member h3 {
             color: var(--color);
             margin-bottom: 15px;
-            font-size: 2.2rem;
-            text-shadow: 0 0 10px var(--color);
+            font-size: 1.8rem;
         }
 
         .member p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
         /* === Divine Mantra Section === */
         .mantra {
-            background: linear-gradient(135deg, rgba(142, 68, 173, 0.15), rgba(39, 174, 96, 0.15));
-            border-radius: 30px;
-            padding: 60px;
-            margin: 80px 0;
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(39, 174, 96, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mantra::before {
-            content: 'ॐ';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30rem;
-            opacity: 0.05;
-            z-index: 0;
         }
 
         .mantra h2 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             color: var(--aurora);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 1;
-            text-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
         }
 
         .mantra p {
-            font-size: 1.8rem;
-            line-height: 2.2;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            line-height: 1.8;
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             font-style: italic;
         }
 
         /* === Galactic Music Temple === */
         .music-temple {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 30px;
-            padding: 50px;
-            margin: 80px 0;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            backdrop-filter: blur(10px);
         }
 
         .music-temple h2 {
             text-align: center;
-            font-size: 3.5rem;
-            background: linear-gradient(45deg, var(--sacred-pink), var(--nebula), var(--quantum));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 40px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--light);
+            margin-bottom: 30px;
         }
 
         .visualizer {
             width: 100%;
-            height: 200px;
-            margin: 40px 0;
+            height: 150px;
+            margin: 30px 0;
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .bar {
             background: linear-gradient(to top, var(--color1), var(--color2));
-            width: 10px;
+            width: 8px;
             height: 10px;
             border-radius: 5px;
-            transition: height 0.2s;
-            box-shadow: 0 0 10px var(--color1);
+            transition: height 0.1s ease-out;
+            will-change: height;
         }
 
         .player-controls {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .player-controls button {
@@ -263,53 +227,46 @@
             color: var(--light);
             border: 2px solid var(--nebula);
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            font-size: 2rem;
+            width: 70px;
+            height: 70px;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: all 0.4s;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
         }
 
         .player-controls button:hover {
             background: var(--nebula);
             transform: scale(1.1);
-            box-shadow: 0 0 30px var(--nebula);
         }
 
         .playlist {
             list-style: none;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .playlist li {
-            padding: 20px;
-            margin: 15px 0;
+            padding: 15px;
+            margin: 10px 0;
             background: rgba(255, 255, 255, 0.07);
-            border-radius: 15px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.4s;
-            border-left: 5px solid transparent;
-            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
 
         .playlist li:hover {
             background: rgba(255, 255, 255, 0.15);
-            border-left: 5px solid var(--nebula);
-            transform: translateX(15px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* === Sacred Mushroom Galaxy === */
-        .mushroom-galaxy {
+        /* === Sacred Mushroom Garden === */
+        .mushroom-garden {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 150px;
+            height: 100px;
             display: flex;
             justify-content: space-around;
             align-items: flex-end;
@@ -317,11 +274,12 @@
         }
 
         .mushroom {
-            width: 60px;
+            width: 40px;
             height: 0;
             position: relative;
-            animation: growMushroom 8s forwards;
+            animation: growMushroom 6s forwards ease-out;
             animation-delay: calc(var(--i) * 0.2s);
+            will-change: height;
         }
 
         .mushroom::before {
@@ -330,133 +288,77 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 30px;
+            width: 30px;
+            height: 20px;
             background: var(--color);
             border-radius: 50% 50% 0 0;
-            filter: drop-shadow(0 0 10px var(--color));
         }
 
         .mushroom::after {
             content: '';
             position: absolute;
-            top: 30px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 25px;
-            height: 70px;
+            width: 15px;
+            height: 50px;
             background: white;
-            border-radius: 0 0 15px 15px;
-        }
-
-        /* === Floating Cosmic Mandalas === */
-        .mandala {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%238e44ad" stroke-width="1.5"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23e84393" stroke-width="1.5"/><circle cx="50" cy="50" r="25" fill="none" stroke="%2327ae60" stroke-width="1.5"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23f1c40f" stroke-width="1.5"/></svg>');
-            opacity: 0.1;
-            z-index: -1;
-            animation: cosmicFloat 25s infinite linear;
+            border-radius: 0 0 10px 10px;
         }
 
         /* === Universal Peace Footer === */
         footer {
             text-align: center;
-            padding: 80px;
-            margin-top: 100px;
-            background: linear-gradient(180deg, transparent, rgba(142, 68, 173, 0.15));
-            position: relative;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer::before {
-            content: '☮';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30rem;
-            opacity: 0.05;
-            z-index: 0;
+            padding: 60px;
+            margin-top: 80px;
+            background: linear-gradient(180deg, transparent, rgba(142, 68, 173, 0.1));
         }
 
         footer p {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 20px;
         }
 
         .universal-peace {
-            font-size: 4rem;
+            font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 900;
-            background: linear-gradient(45deg, var(--aurora), var(--tibetan-sun), var(--supernova), var(--quantum));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: peaceGlow 15s ease infinite;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-            letter-spacing: 5px;
+            color: var(--light);
+            letter-spacing: 3px;
         }
 
-        /* === Cosmic Animations === */
+        /* === Optimized Animations === */
         @keyframes cosmicFlow {
             0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes peaceGlow {
-            0% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(180deg); }
-            100% { filter: hue-rotate(360deg); }
+            100% { background-position: 100% 50%; }
         }
 
         @keyframes floatSymbol {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(10deg); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes growMushroom {
             from { height: 0; }
-            to { height: 120px; }
+            to { height: 80px; }
         }
 
-        @keyframes cosmicFloat {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.1; }
-            25% { transform: translate(100px, 100px) rotate(90deg) scale(1.1); opacity: 0.15; }
-            50% { transform: translate(0, 200px) rotate(180deg) scale(1); opacity: 0.1; }
-            75% { transform: translate(-100px, 100px) rotate(270deg) scale(0.9); opacity: 0.15; }
-            100% { transform: translate(0, 0) rotate(360deg) scale(1); opacity: 0.1; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.1; }
-            50% { transform: scale(1.2); opacity: 0.3; }
-            100% { transform: scale(0.8); opacity: 0.1; }
-        }
-
-        /* === Quantum Responsiveness === */
+        /* === Responsive Design === */
         @media (max-width: 768px) {
-            .title { font-size: 3.5rem; }
-            .subtitle { font-size: 1.5rem; }
-            .sacred-symbol { font-size: 4rem; }
-            .mantra h2 { font-size: 2.5rem; }
-            .mantra p { font-size: 1.3rem; }
-            .member { width: 100%; max-width: 320px; padding: 30px; }
-            .music-temple { padding: 30px; }
-            .universal-peace { font-size: 2.5rem; }
+            header {
+                padding: 60px 0;
+            }
+            
+            .member {
+                padding: 25px;
+            }
+            
+            .mantra, .music-temple {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- === Floating Cosmic Mandalas === -->
-    <div class="mandala" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
-    <div class="mandala" style="top: 30%; right: 10%; animation-delay: -5s;"></div>
-    <div class="mandala" style="bottom: 20%; left: 20%; animation-delay: -10s;"></div>
-    <div class="mandala" style="bottom: 40%; right: 20%; animation-delay: -15s;"></div>
-
     <div class="container">
         <!-- === Celestial Header === -->
         <header>
@@ -515,8 +417,8 @@
         </section>
     </div>
 
-    <!-- === Sacred Mushroom Galaxy === -->
-    <div class="mushroom-galaxy">
+    <!-- === Sacred Mushroom Garden === -->
+    <div class="mushroom-garden">
         <!-- Mushrooms will be added by JavaScript -->
     </div>
 
@@ -527,19 +429,19 @@
     </footer>
 
     <script>
-        // === Create Sacred Mushroom Galaxy ===
-        const mushroomColors = ['#8e44ad', '#e84393', '#27ae60', '#f1c40f', '#3498db', '#e67e22'];
-        const galaxy = document.querySelector('.mushroom-galaxy');
+        // === Create Optimized Mushroom Garden ===
+        const mushroomColors = ['#8e44ad', '#e84393', '#27ae60', '#f1c40f', '#3498db'];
+        const garden = document.querySelector('.mushroom-garden');
         
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < 15; i++) {
             const mushroom = document.createElement('div');
             mushroom.className = 'mushroom';
             mushroom.style.setProperty('--i', i);
             mushroom.style.setProperty('--color', mushroomColors[Math.floor(Math.random() * mushroomColors.length)]);
-            galaxy.appendChild(mushroom);
+            garden.appendChild(mushroom);
         }
 
-        // === Galactic Music Player ===
+        // === Optimized Music Player ===
         const audio = new Audio();
         const playlist = document.getElementById('playlist');
         const playBtn = document.getElementById('play-btn');
@@ -549,13 +451,14 @@
         let currentTrack = 0;
         let isPlaying = false;
         let audioContext, analyser, dataArray;
+        let animationFrameId;
 
-        // Create visualizer bars with cosmic colors
-        for (let i = 0; i < 50; i++) {
+        // Create visualizer bars
+        for (let i = 0; i < 40; i++) {
             const bar = document.createElement('div');
             bar.className = 'bar';
-            bar.style.setProperty('--color1', `hsl(${i * 7.2}, 100%, 50%)`);
-            bar.style.setProperty('--color2', `hsl(${i * 7.2 + 36}, 100%, 70%)`);
+            bar.style.setProperty('--color1', `hsl(${i * 9}, 80%, 60%)`);
+            bar.style.setProperty('--color2', `hsl(${i * 9 + 30}, 80%, 70%)`);
             visualizer.appendChild(bar);
         }
 
@@ -563,13 +466,15 @@
 
         // Initialize Web Audio API
         function setupAudioContext() {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const source = audioContext.createMediaElementSource(audio);
-            analyser = audioContext.createAnalyser();
-            analyser.fftSize = 512;
-            source.connect(analyser);
-            analyser.connect(audioContext.destination);
-            dataArray = new Uint8Array(analyser.frequencyBinCount);
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const source = audioContext.createMediaElementSource(audio);
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 128; // Reduced for performance
+                source.connect(analyser);
+                analyser.connect(audioContext.destination);
+                dataArray = new Uint8Array(analyser.frequencyBinCount);
+            }
         }
 
         // Visualizer animation
@@ -581,18 +486,18 @@
             for (let i = 0; i < bars.length; i++) {
                 const index = Math.floor(i * (dataArray.length / bars.length));
                 const value = dataArray[index] / 255;
-                const height = value * 200;
+                const height = value * 150;
                 bars[i].style.height = `${height}px`;
-                bars[i].style.opacity = value + 0.2;
             }
             
             if (isPlaying) {
-                requestAnimationFrame(updateVisualizer);
+                animationFrameId = requestAnimationFrame(updateVisualizer);
             }
         }
 
         // Load a track
         function loadTrack(index) {
+            cancelAnimationFrame(animationFrameId);
             const track = playlist.children[index];
             audio.src = track.getAttribute('data-src');
             audio.load();
@@ -600,10 +505,8 @@
             // Highlight current track
             Array.from(playlist.children).forEach(item => {
                 item.style.background = 'rgba(255, 255, 255, 0.07)';
-                item.style.borderLeft = '5px solid transparent';
             });
-            track.style.background = 'rgba(142, 68, 173, 0.3)';
-            track.style.borderLeft = '5px solid var(--nebula)';
+            track.style.background = 'rgba(142, 68, 173, 0.2)';
             
             if (isPlaying) {
                 audio.play().catch(e => console.log('Playback prevented:', e));
@@ -612,9 +515,7 @@
 
         // Play/Pause
         function playPause() {
-            if (audioContext === undefined) {
-                setupAudioContext();
-            }
+            setupAudioContext();
             
             if (audio.paused) {
                 audio.play().then(() => {
@@ -626,6 +527,7 @@
                 audio.pause();
                 isPlaying = false;
                 playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                cancelAnimationFrame(animationFrameId);
             }
         }
 
@@ -661,99 +563,13 @@
         // Load first track
         loadTrack(0);
 
-        // === Cosmic Mouse Effects ===
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            document.body.style.background = `
-                linear-gradient(
-                    135deg,
-                    hsl(${x * 360}, 70%, 12%),
-                    hsl(${y * 360 + 180}, 70%, 15%)
-                ),
-                radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(142, 68, 173, 0.2) 0%, transparent 20%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.5"/></svg>')
-            `;
+        // Clean up on page unload
+        window.addEventListener('beforeunload', () => {
+            cancelAnimationFrame(animationFrameId);
+            if (audioContext) {
+                audioContext.close();
+            }
         });
-
-        // === Floating Cosmic Symbols ===
-        function createFloatingSymbol() {
-            const symbols = ['☯', '☮', 'ॐ', '♡', '✧', '⋆', '☆', '✺', '𓃭'];
-            const symbol = document.createElement('div');
-            symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-            symbol.style.position = 'fixed';
-            symbol.style.fontSize = `${Math.random() * 40 + 20}px`;
-            symbol.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-            symbol.style.opacity = '0.8';
-            symbol.style.left = `${Math.random() * 100}%`;
-            symbol.style.top = `${Math.random() * 100}%`;
-            symbol.style.pointerEvents = 'none';
-            symbol.style.zIndex = '-1';
-            symbol.style.filter = 'blur(1px) drop-shadow(0 0 5px currentColor)';
-            document.body.appendChild(symbol);
-            
-            // Animate
-            const duration = Math.random() * 40 + 20;
-            const xMove = (Math.random() - 0.5) * 300;
-            const yMove = (Math.random() - 0.5) * 300;
-            
-            symbol.animate([
-                { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
-                { transform: `translate(${xMove}px, ${yMove}px) rotate(360deg) scale(1.5)` }
-            ], {
-                duration: duration * 1000,
-                iterations: Infinity,
-                direction: 'alternate',
-                easing: 'ease-in-out'
-            });
-
-            // Pulsing glow
-            symbol.animate([
-                { opacity: 0.6, filter: 'blur(1px) drop-shadow(0 0 5px currentColor)' },
-                { opacity: 1, filter: 'blur(1px) drop-shadow(0 0 15px currentColor)' }
-            ], {
-                duration: Math.random() * 5000 + 3000,
-                iterations: Infinity,
-                direction: 'alternate'
-            });
-        }
-
-        // Create floating cosmic symbols
-        for (let i = 0; i < 15; i++) {
-            createFloatingSymbol();
-        }
-
-        // === Cosmic Background Pulse ===
-        function cosmicPulse() {
-            const pulse = document.createElement('div');
-            pulse.style.position = 'fixed';
-            pulse.style.width = '100vmax';
-            pulse.style.height = '100vmax';
-            pulse.style.background = 'radial-gradient(circle, hsl(' + (Math.random() * 360) + ', 100%, 50%), transparent)';
-            pulse.style.opacity = '0';
-            pulse.style.left = Math.random() * 100 + '%';
-            pulse.style.top = Math.random() * 100 + '%';
-            pulse.style.transform = 'translate(-50%, -50%)';
-            pulse.style.pointerEvents = 'none';
-            pulse.style.zIndex = '-1';
-            pulse.style.filter = 'blur(50px)';
-            document.body.appendChild(pulse);
-            
-            pulse.animate([
-                { opacity: 0, transform: 'translate(-50%, -50%) scale(0)' },
-                { opacity: 0.1, transform: 'translate(-50%, -50%) scale(1)' },
-                { opacity: 0, transform: 'translate(-50%, -50%) scale(2)' }
-            ], {
-                duration: Math.random() * 10000 + 10000,
-                iterations: Infinity
-            });
-        }
-
-        // Create cosmic pulses
-        for (let i = 0; i < 3; i++) {
-            cosmicPulse();
-        }
     </script>
 </body>
 </html>
